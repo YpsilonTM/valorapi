@@ -1,8 +1,10 @@
 {
   "name": "valorapi",
-  "version": "1.0.0",
-  "description": "A NPM package called ValorAPI",
-  "main": "src/index.ts",
+  "version": "0.0.1",
+  "description": "A wrapper for the Valorant API created by Hendrik-3",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest"
   },
@@ -16,9 +18,6 @@
     "axios": "^1.6.8"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "jest": "^27.0.4",
-    "ts-jest": "^27.0.3",
     "typescript": "^4.4.2"
   }
 }
