@@ -10,6 +10,10 @@ I have created this wrapper to have easy access to valorant api. I will be addin
 
 For big scale projects, I would recommend using the [official API](https://developer.riotgames.com/docs/valorant) by Riot Games.
 
+## Api Endpoints
+
+All the endpoints are listed in the API Documentation [here](https://app.swaggerhub.com/apis-docs/Henrik-3/HenrikDev-API)
+
 ## Contributing
 
 If you would like to contribute to this project, please feel free to do so. I will be happy to accept any pull requests after reviewing them. If you have any suggestions or issues, please open an issue.
