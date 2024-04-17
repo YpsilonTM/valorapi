@@ -29,8 +29,7 @@ export class ValorantUser {
         return null
       }
     } catch (error) {
-      console.error(error)
-      return null
+      throw new Error('Something went wrong while fetching data. From the server.')
     }
   }
 
