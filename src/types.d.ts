@@ -68,3 +68,28 @@ export interface MMRData {
     }
   >
 }
+
+export interface MatchData {
+  metadata: {
+    map: Maps
+    game_version: string
+    game_length: number
+    game_start: number
+    game_start_patched: string
+    rounds_played: number
+    mode: string
+    mode_id: Modes
+    queue: string
+    season_id: string
+    platform: string
+    matchid: string
+    premiere_info: object
+    region: Regions
+    cluster: string
+  }
+  players: {}
+  observers: {}[]
+  coaches: {}[]
+  teams: {}
+  rounds: {}[]
+}
