@@ -21,18 +21,22 @@ export class ValorantUser {
   }
 
   async getContent(query: Parameters<typeof this.api.valorant.v1ContentList>[0]) {
-    return this.api.valorant.v1ContentList(query)
+    const response = await this.api.valorant.v1ContentList(query)
+    return response.data
   }
 
   async getAccount() {
-    return this.api.valorant.v1AccountDetail(this.name, this.tag)
+    const reponse = await this.api.valorant.v1AccountDetail(this.name, this.tag)
+    return reponse.data
   }
 
   async getMMR() {
-    return this.api.valorant.v1MmrDetail(this.name, this.tag, this.affinity)
+    const reponse = await this.api.valorant.v1MmrDetail(this.name, this.tag, this.affinity)
+    return reponse.data
   }
 
   async getMatches() {
-    return this.api.valorant.v3MatchesDetail(this.name, this.tag, this.affinity)
+    const reponse = await this.api.valorant.v3MatchesDetail(this.name, this.tag, this.affinity)
+    return reponse.data
   }
 }

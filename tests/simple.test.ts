@@ -1,23 +1,6 @@
 import { ValorantUser } from '../src/index'
 import { Affinities } from '../src/swagger.build'
 
-jest.mock('../src/index', () => {
-  return {
-    ValorantUser: jest.fn().mockImplementation(() => {
-      return {
-        getAccount: jest.fn().mockResolvedValue({
-          puuid: 'mockPuuid',
-          // add other properties as needed
-        }),
-        getMMR: jest.fn().mockResolvedValue({
-          current_data: 'mockData',
-          // add other properties as needed
-        }),
-      }
-    }),
-  }
-})
-
 describe('ValorantUser', () => {
   let user: ValorantUser
 
@@ -26,14 +9,27 @@ describe('ValorantUser', () => {
   })
 
   test('getAccount returns account data', async () => {
-    const data = await user.getAccount()
-    expect(data).toBeDefined()
-    expect(data).toHaveProperty('puuid')
+    const response = await user.getAccount()
+    expect(response).toBeDefined()
+    expect(response.status).toBe(200)
+    expect(response).toHaveProperty('data.puuid')
   })
 
   test('getMMR returns mmr data', async () => {
-    const data = await user.getMMR()
-    expect(data).toBeDefined()
-    expect(data).toHaveProperty('current_data')
+    const response = await user.getMMR()
+    expect(response).toBeDefined()
+    expect(response.status).toBe(200)
+    expect(response).toHaveProperty('data.currenttier')
+  })
+
+  test('getMatches returns match data', async () => {
+    const response = await user.getMatches()
+    expect(response).toBeDefined()
+    expect(response.status).toBe(200)
+  })
+
+  test('getContent returns content data', async () => {
+    const response = await user.getContent({ locale: 'en-GB' })
+    expect(response).toBeDefined()
   })
 })
