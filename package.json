@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsup",
     "test": "jest",
-    "publish": "npm build && npm publish"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "valorant",
