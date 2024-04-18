@@ -4,7 +4,7 @@
 
 This is a wrapper for the [Valorant API](https://github.com/Henrik-3/unofficial-valorant-api) ran by [Hendrik](https://github.com/Henrik-3).
 
-You do not need an API key to use this wrapper, it is rate limited to 30 requests per minute.
+You do not need an API key to use this wrapper, it is rate limited to 30 requests per minute. Other status codes are also listed in the API documentation.
 
 I have created this wrapper to have easy access to valorant api. I will be adding more endpoints as I go. But for now, I have only added the basic endpoints.
 
@@ -23,23 +23,30 @@ If you would like to contribute to this project, please feel free to do so. I wi
 CommonJS:
 
 ```js
-const ValorAPI = require('valorapi')
-const User = new ValorAPI('username', 'tag', 'region')
+const { ValorantUser } = require('valorapi')
+const User = new ValorantUser('ypsilontm', 'euw', Affinities.Eu)
 const account = await User.getAccount()
+if (account.status === 200) {
+  const name = account.data?.name
+  // Do other things...
+}
 ```
 
 ES6:
 
 ```js
-import ValorAPI from 'valorapi'
-const User = new ValorAPI('username', 'tag', 'region')
+import { ValorantUser } from 'valorapi'
+const User = new ValorantUser('ypsilontm', 'euw', Affinities.Eu)
 const account = await User.getAccount()
+if (account.status === 200) {
+  const name = account.data?.name
+  // Do other things...
+}
 ```
 
-## Todo
+## Current Available methods
 
-- [ ] Add more endpoints
-- [ ] Optimize code
-- [ ] Add better error handling
-- [ ] Add more tests
-- [ ] Add more documentation
+- `getAccount()`
+- `getMMR()`
+- `getContent()`
+- `getMatches()`
