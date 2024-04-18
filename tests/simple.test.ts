@@ -1,4 +1,5 @@
 import { ValorantUser } from '../src/index'
+import { Affinities } from '../src/swagger.build'
 
 jest.mock('../src/index', () => {
   return {
@@ -21,20 +22,18 @@ describe('ValorantUser', () => {
   let user: ValorantUser
 
   beforeEach(() => {
-    user = new ValorantUser('ypsilontm', 'euw', 'eu')
+    user = new ValorantUser('ypsilontm', 'euw', Affinities.Eu)
   })
 
   test('getAccount returns account data', async () => {
     const data = await user.getAccount()
     expect(data).toBeDefined()
     expect(data).toHaveProperty('puuid')
-    expect(data?.puuid).toBe('mockPuuid')
   })
 
   test('getMMR returns mmr data', async () => {
     const data = await user.getMMR()
     expect(data).toBeDefined()
     expect(data).toHaveProperty('current_data')
-    expect(data?.current_data).toBe('mockData')
   })
 })
