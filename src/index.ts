@@ -1,5 +1,4 @@
-import axios, { AxiosInstance } from 'axios'
-import { Affinities, Api, Regions } from './swagger.build'
+import { Affinities, Api, ContentType } from './swagger.build'
 
 // ValorantAPI Class
 
@@ -21,11 +20,19 @@ export class ValorantUser {
     this.api = new Api({})
   }
 
+  async getContent(query: Parameters<typeof this.api.valorant.v1ContentList>[0]) {
+    return this.api.valorant.v1ContentList(query)
+  }
+
   async getAccount() {
     return this.api.valorant.v1AccountDetail(this.name, this.tag)
   }
 
   async getMMR() {
     return this.api.valorant.v1MmrDetail(this.name, this.tag, this.affinity)
+  }
+
+  async getMatches() {
+    return this.api.valorant.v3MatchesDetail(this.name, this.tag, this.affinity)
   }
 }
