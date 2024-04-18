@@ -41,4 +41,4 @@ export class ValorantUser {
   }
 }
 
-export { Api as ValorantBaseAPI }
+export { Affinities, Api as ValorantBaseAPI }
