@@ -40,3 +40,5 @@ export class ValorantUser {
     return reponse.data
   }
 }
+
+export { Api as ValorantBaseAPI }
