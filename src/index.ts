@@ -17,12 +17,7 @@ export class ValorantUser {
     this.name = name
     this.tag = tag
     this.affinity = affinity
-    this.api = new Api({})
-  }
-
-  async getContent(query: Parameters<typeof this.api.valorant.v1ContentList>[0]) {
-    const response = await this.api.valorant.v1ContentList(query)
-    return response.data
+    this.api = new Api()
   }
 
   async getAccount() {
