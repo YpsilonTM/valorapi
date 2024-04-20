@@ -1,6 +1,5 @@
 /node_modules
 /dist
-*-lock.json
 
 .env
 .DS_Store
