@@ -43,6 +43,14 @@ export class ValorantUser {
     const reponse = await this.api.valorant.v3MatchesDetail(this.name, this.tag, this.affinity)
     return reponse.data
   }
+
+  /**
+   * @returns The match history of the Valorant user.
+   */
+  async getMatchesLifetime() {
+    const reponse = await this.api.valorant.v1LifetimeMatchesDetail(this.affinity, this.name, this.tag)
+    return reponse.data
+  }
 }
 
 export { Affinities, Api as ValorantBaseAPI }
