@@ -18,7 +18,30 @@ All the endpoints are listed in the API Documentation [here](https://app.swagger
 
 If you would like to contribute to this project, please feel free to do so. I will be happy to accept any pull requests after reviewing them. If you have any suggestions or issues, please open an issue.
 
+## Beta
+
+This project is still in beta, so there might be some bugs. If you find any, please open an issue. This might take a while until I find it suitable for production. So as long as we don't reach v1 you should consider this as a beta project.
+At this stage, even minor updates might break your code. So please be careful when updating.
+
 ## Usage
+
+Try to use this wrapper in a try-catch block to catch any errors that might occur. Communication with the API is done via HTTP requests, so there might be some errors that you can catch.
+Errors based on the API give an errors object in the response. You can check if the errors object is not null to see if there are any errors.
+Some examples are:
+
+- 101: No region found for this Player
+- 102: No matches found, can't get puuid
+- 103: Possible name change detected, can't get puuid. Please play one match, wait 1-2 minutes and try it again
+- 104: Invalid region
+- 105: Invalid filter
+- 106: Invalid gamemode
+- 107: Invalid map
+- 108: Invalid locale
+- 109: Missing name
+- 110: Missing tag
+- 111: Player not found in leaderboard
+
+for more errors, please check the API documentation.
 
 CommonJS:
 
@@ -46,7 +69,7 @@ if (account.status === 200) {
 
 ## Current Available methods
 
-- `getAccount()`
 - `getMMR()`
 - `getContent()`
 - `getMatches()`
+- `getMatchesLifetime()`
