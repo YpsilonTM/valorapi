@@ -20,16 +20,25 @@ export class ValorantUser {
     this.api = new Api()
   }
 
+  /**
+   * @returns The account details of the Valorant user.
+   */
   async getAccount() {
     const reponse = await this.api.valorant.v1AccountDetail(this.name, this.tag)
     return reponse.data
   }
 
+  /**
+   * @returns The MMR info of the Valorant user.
+   */
   async getMMR() {
     const reponse = await this.api.valorant.v1MmrDetail(this.name, this.tag, this.affinity)
     return reponse.data
   }
 
+  /**
+   * @returns The last 5 matches of the Valorant user. In detail.
+   */
   async getMatches() {
     const reponse = await this.api.valorant.v3MatchesDetail(this.name, this.tag, this.affinity)
     return reponse.data
