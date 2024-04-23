@@ -32,7 +32,7 @@ export class ValorantUser {
    * @returns The MMR info of the Valorant user.
    */
   async getMMR() {
-    const reponse = await this.api.valorant.v1MmrDetail(this.name, this.tag, this.affinity)
+    const reponse = await this.api.valorant.v2MmrDetail(this.name, this.tag, this.affinity)
     return reponse.data
   }
 
