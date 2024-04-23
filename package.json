@@ -1,6 +1,6 @@
 {
   "name": "valorapi",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "A wrapper for the Valorant API created by Hendrik-3",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
