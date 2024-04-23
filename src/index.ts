@@ -1,4 +1,4 @@
-import { Affinities, Api, ContentType } from './swagger.build'
+import { Affinities, Api, Maps, ModesApi } from './swagger.build'
 
 // ValorantAPI Class
 
@@ -53,4 +53,4 @@ export class ValorantUser {
   }
 }
 
-export { Affinities, Api as ValorantBaseAPI }
+export { Affinities, Maps, ModesApi, Api as ValorantBaseAPI }
