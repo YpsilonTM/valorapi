@@ -47,8 +47,8 @@ export class ValorantUser {
   /**
    * @returns The match history of the Valorant user.
    */
-  async getMatchesLifetime() {
-    const reponse = await this.api.valorant.v1LifetimeMatchesDetail(this.affinity, this.name, this.tag)
+  async getMatchesLifetime(query: Parameters<Api<null>['valorant']['v1LifetimeMatchesDetail']>[3] = {}) {
+    const reponse = await this.api.valorant.v1LifetimeMatchesDetail(this.affinity, this.name, this.tag, query)
     return reponse.data
   }
 }
